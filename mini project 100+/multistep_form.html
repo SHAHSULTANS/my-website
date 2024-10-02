@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Step Form</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        
+        .showcontent form{
+            background-color: white;
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+            
+        }
+        .tab{
+            display: none;
+        }
+        .tab input{
+            padding: 8px 16px;
+            font-size: 17px;
+            width: 100%;
+        }
+        .tab p{
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+        input.invalid{
+            background-color: #444;
+        }
+        .indicator{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btnclass button{
+            border: none;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 5px;
+            background-color: #aaa;
+
+        }
+        .btnclass #next{
+            background-color: rgb(19, 221, 174);
+            color: white;
+        }
+        .indicator span{
+            height: 15px;
+            border-radius: 50%;
+            width: 15px;
+            background-color: rgb(155, 149, 149);
+            display: inline-block;
+            margin: 1px;
+        }
+        .indicator .finish{
+            background-color: rgb(49, 238, 11);
+            opacity: 0.6;
+        }
+        .indicator .active{
+            background-color: dodgerblue;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <div class="search">
+            <input type="text" id="navsearch" placeholder="search here..." class="search" onkeyup="navsearch()">
+        </div>
+        <div class="navmenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+
+        </div>
+        <button class="hamberger" onclick="hamberger()">&#9776;</button>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-25">
+
+            
+            <h2 style="text-align: center;">Projects</h2>
+            <a href="create_messenger.html">Create Messenger</a>
+            <a href="popup_chat_box.html">Pop Up ChatBox</a>
+
+            <a href="index.html">Type Writer ChatGpt</a>
+            <a href="copy_text_input_clipboard.html">Basic Copy Text</a>
+            <a href="tooltip.html">Using Tolltip</a>
+
+            <a href="Digital_Clock.html">Digital Clock</a>
+            <a href="count_down_timer.html">CountDown Timer</a>
+            <a href="stopwatch.html">Create StopWatch</a>
+
+            <a href="fb_login_form.html">FB login from</a>
+            <a href="tab.html">Tab Button</a>
+            <a href="accordion.html">Accordion</a>
+            <a href="auto_img_slide_show.html">Auto Image Gallery</a>
+            <a href="dropdown_menu.html">DropDown Menu</a>
+            <a href="modal_box.html">Modal Box</a>
+            <a href="modal_image_box.html">Modal Image Box</a>
+            <a href="scroll_indicator.html">Scroll Indicator</a>
+            <a href="To_do_list.html">To Do List</a>
+            <a href="Autocomplete.html">Autocomplete</a>
+
+            <a href="google_remember_our_search.html" >Remember Search History</a>
+            <a href="toggle_switch.html" >Toggle Switch</a>
+            <a href="calender_layout.html" >Calender Layout</a>
+
+            <a href="calender_dynamic.html" >Dynamic Calender</a>
+            <a href="alarm_set.html" >Alarm Set</a>
+            <a href="password_validation.html" >Password Validation</a>
+            <a href="random_password_generator.html" >Password Generator</a>
+            <a href="age_calculator.html" >Age Calculator</a>
+            <a href="multistep_form.html" class="active">Multi Step Form</a>
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <div class="col-75">
+            <div class="projectname">
+                <h1>Multi Step Login Form👤</h1>
+            </div>
+
+            <div class="beginnerpurpose">
+                <div class="condition">
+                    <span>Note: If you are a beginner, this is something you need to know. Scroll the below section or <a href="#beginner">Click  here</a></span>
+                    <ul>
+                        <li>You have to know difference between <strong>Login</strong> & <strong>Signup </strong> </li>
+                        <li>HTML form Tag</li>
+                        <li>HTML input field</li>
+                        <li>HTML Button</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcontent">
+                <div class="container">
+                    <form action="" id="reg">
+                        <h1>Register</h1>
+                        <div class="tab">Name:
+                            <p><input type="text" name="fname" id="fname" placeholder="First Name.."></p>
+                            <p><input type="text" name="lname" id="lname" placeholder="Last Name.."></p>
+                        </div>
+    
+                        <div class="tab">Contact Info:
+                            <p><input type="email" name="email" id="email" placeholder="Email.."></p>
+                            <p><input type="text" name="phone" id="phone" placeholder="phone.."></p>
+                        </div>
+                        <div class="tab">Date of Birth:
+                            <p><input type="text" name="dd" id="dd" placeholder="dd"></p>
+
+                            <p><input type="text" name="mm" id="mm" placeholder="mm"></p>
+
+                            <p><input type="text" name="yy" id="yy" placeholder="yyyy"></p>
+                        </div>
+                        <div class="btnclass" style="overflow: auto;">
+                            <div style="float: right;">
+                                <button type="button" onclick="nextprev(-1)" id="prev">Prev</button>
+                                <button type="button"  id="next" onclick="nextprev(1)">Next</button>
+                            </div>
+                        </div>
+
+                        <div class="indicator">
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            
+                        </div>
+
+
+                    </form>
+                </div>
+                
+            </div>
+
+
+            <div class="htmlcode snipet">
+                <h2>HTML</h2>
+                <div class="htmlcontainer">
+                    <button>copy</button>
+                    <div class="html">
+<pre>
+<code>
+&lt;div class="showcontent"&gt;
+    &lt;div class="container"&gt;
+        &lt;form action="" id="reg"&gt;
+            &lt;h1&gt;Register&lt;/h1&gt;
+            &lt;div class="tab"&gt;Name:
+                &lt;p&gt;&lt;input type="text" name="fname" id="fname" placeholder="First Name.."&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;input type="text" name="lname" id="lname" placeholder="Last Name.."&gt;&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class="tab"&gt;Contact Info:
+                &lt;p&gt;&lt;input type="email" name="email" id="email" placeholder="Email.."&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;input type="text" name="phone" id="phone" placeholder="phone.."&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="tab"&gt;Date of Birth:
+                &lt;p&gt;&lt;input type="text" name="dd" id="dd" placeholder="dd"&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;input type="text" name="mm" id="mm" placeholder="mm"&gt;&lt;/p&gt;
+
+                &lt;p&gt;&lt;input type="text" name="yy" id="yy" placeholder="yyyy"&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="btnclass" style="overflow: auto;"&gt;
+                &lt;div style="float: right;"&gt;
+                    &lt;button type="button" onclick="nextprev(-1)" id="prev"&gt;Prev&lt;/button&gt;
+                    &lt;button type="button"  id="next" onclick="nextprev(1)"&gt;Next&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="indicator"&gt;
+                &lt;span class="step"&gt;&lt;/span&gt;
+                &lt;span class="step"&gt;&lt;/span&gt;
+                &lt;span class="step"&gt;&lt;/span&gt;
+                
+            &lt;/div&gt;
+
+
+        &lt;/form&gt;
+    &lt;/div&gt;
+    
+&lt;/div&gt;
+</code>
+</pre>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="csscode snipet">
+                <h2>CSS</h2>
+                <div class="csscontainer">
+                    <button>copy</button>
+                    <div class="css">
+            <pre>
+<code>
+.showcontent form{
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    
+}
+.tab{
+    display: none;
+}
+.tab input{
+    padding: 8px 16px;
+    font-size: 17px;
+    width: 100%;
+}
+.tab p{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+input.invalid{
+    background-color: #444;
+}
+.indicator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btnclass button{
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #aaa;
+
+}
+.btnclass #next{
+    background-color: rgb(19, 221, 174);
+    color: white;
+}
+.indicator span{
+    height: 15px;
+    border-radius: 50%;
+    width: 15px;
+    background-color: rgb(155, 149, 149);
+    display: inline-block;
+    margin: 1px;
+}
+.indicator .finish{
+    background-color: rgb(49, 238, 11);
+    opacity: 0.6;
+}
+.indicator .active{
+    background-color: dodgerblue;
+}    
+</code>
+            </pre>
+            
+            
+                    </div>
+                </div>
+            </div>
+
+            <div class="jscode snipet">
+                <h2>JavaScript</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+                        <pre>
+<code>
+let currentTab=0;
+showTab(currentTab);
+
+function showTab(n){
+    let x=document.getElementsByClassName("tab");
+    //console.log(x);
+    x[n].style.display="block";
+
+    if(n==0){
+        document.getElementById("prev").style.display='none';
+    }
+    else{
+        document.getElementById("prev").style.display='inline';
+
+    }
+
+    if(n==x.length-1){
+        document.getElementById("next").innerHTML="Submit";
+    }
+    else{
+        document.getElementById("next").innerHTML="Next";
+
+    }
+    fiexIndicator(n);
+}
+
+function nextprev(n){
+    let x=document.getElementsByClassName("tab");
+    if(n==1 && !validation()){
+        return false;
+    }
+    x[currentTab].style.display='none';
+
+    currentTab+=n;
+    if(currentTab>=x.length){
+        document.getElementById("reg").submit();
+        return false;
+    }
+    showTab(currentTab);
+
+}
+
+function validation(){
+    let x=document.getElementsByClassName("tab");
+    let y=x[currentTab].getElementsByTagName("input");
+    //console.log(y);
+    let valid=true;
+
+    for(let i=0;i< y.length;i++){
+        if(y[i].value.trim()==""){
+            valid=false;
+            y[i].classList.add("invalid");
+        }
+
+    }
+    if(valid){
+        document.getElementsByClassName("step")[currentTab].classList.add("finish");
+        //console.log(document.getElementsByClassName("step")[currentTab]);
+    }
+    return valid;
+    
+}
+
+function fiexIndicator(n){
+    let x=document.getElementsByClassName("step");
+    for(let i=0;i< x.length;i++){
+        x[i].classList.remove("active");
+    }
+
+    x[n].classList.add("active");
+}
+
+//remove invalid class
+let totalInput=document.querySelectorAll(".tab input");
+for(let i=0;i< totalInput.length;i++){
+    totalInput[i].addEventListener("focus",function(){
+        totalInput[i].className="";
+    })
+}
+
+//console.log(totalInput);
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="beginnersection" id="beginner">
+                <section>
+                    <h2>HTML DOM</h2>
+                    <ul>
+                        <li><span class="title">querySelector:</span> <span>retuns the first element within the document that matches the specified CSS selctor. Example: const sampleElement = document.querySelector('.sample').If there are mutltiple element with the class name 'sample' `querySelector` will return the first matching elements.</span></li>
+                        <li>You can also use getElementById, getElementByClassName, querySelectorAll etc</li>
+                    </ul>
+                    
+                </section>
+
+                <section>
+                    <h2>String charAt()</h2>
+                    <ul>
+                        <li>The charAt(): method in JavaScript returns the character at a specified index in a string. The index starts from 0. <span>Example: const str = "Hello, World!";<br>const char = str.charAt(7)</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>setTimeOut method()</h2>
+                    <ul>
+                        <li>setTimeOut(function-name, millsec): that will execute the provided function after certain millisecond.<br> clearTimeout(timeoutId) used to cancel time out if needded. </li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2>requestAnimationFrame()</h2>
+                    <ul>
+                        <li><span>requestAnimationFrame():</span> works by calling the provided callback function before the next repaint, allowing smooth animations.<br>Example requestAnimationFrame(function_name);</li>
+                    </ul>
+                </section>
+
+
+
+        </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="index.js">
+    </script>
+
+    <script>
+        let currentTab=0;
+        showTab(currentTab);
+
+        function showTab(n){
+            let x=document.getElementsByClassName("tab");
+            //console.log(x);
+            x[n].style.display="block";
+
+            if(n==0){
+                document.getElementById("prev").style.display='none';
+            }
+            else{
+                document.getElementById("prev").style.display='inline';
+
+            }
+
+            if(n==x.length-1){
+                document.getElementById("next").innerHTML="Submit";
+            }
+            else{
+                document.getElementById("next").innerHTML="Next";
+
+            }
+            fiexIndicator(n);
+        }
+
+        function nextprev(n){
+            let x=document.getElementsByClassName("tab");
+            if(n==1 && !validation()){
+                return false;
+            }
+            x[currentTab].style.display='none';
+
+            currentTab+=n;
+            if(currentTab>=x.length){
+                document.getElementById("reg").submit();
+                return false;
+            }
+            showTab(currentTab);
+
+        }
+
+        function validation(){
+            let x=document.getElementsByClassName("tab");
+            let y=x[currentTab].getElementsByTagName("input");
+            //console.log(y);
+            let valid=true;
+
+            for(let i=0;i<y.length;i++){
+                if(y[i].value.trim()==""){
+                    valid=false;
+                    y[i].classList.add("invalid");
+                }
+
+            }
+            if(valid){
+                document.getElementsByClassName("step")[currentTab].classList.add("finish");
+                //console.log(document.getElementsByClassName("step")[currentTab]);
+            }
+            return valid;
+            
+        }
+
+        function fiexIndicator(n){
+            let x=document.getElementsByClassName("step");
+            for(let i=0;i< x.length;i++){
+                x[i].classList.remove("active");
+            }
+
+            x[n].classList.add("active");
+        }
+
+     //remove invalid class
+        let totalInput=document.querySelectorAll(".tab input");
+        for(let i=0;i< totalInput.length;i++){
+            totalInput[i].addEventListener("focus",function(){
+                totalInput[i].className="";
+            })
+        }
+
+        //console.log(totalInput);
+
+
+
+
+        
+    </script>
+
+
+</body>
+
+</html>

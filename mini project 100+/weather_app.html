@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .col-75 .showcontent {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: hsl(0, 0%, 95%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .showcontent .weatherForm {
+            margin: 20px;
+
+        }
+
+        .cityInput {
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border: 2px solid hsla(0, 1%, 49%, 0.56);
+            border-radius: 10px;
+            width: 300px;
+
+        }
+
+        .weatherForm button[type=sumbit] {
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: hsla(120, 90%, 46%, 0.896);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .card {
+            background: linear-gradient(180deg, hsla(240, 93%, 48%, 0.807), hsla(39, 97%, 47%, 0.83));
+            padding: 30px 60px;
+            box-shadow: 2px 2px 2px hsla(0, 0%, 7%, 0.713);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+
+        }
+
+        .card p {
+            font-size: 1.3rem;
+            margin: 5px 0;
+        }
+
+        .card .cityDisplay,
+        .card .tempDisplay {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card .humidityDisplay {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card .descDisplay {
+            font-style: italic;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .card .weatherEmoji {
+            font-size: 4rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <div class="search">
+            <input type="text" id="navsearch" placeholder="search here..." class="search" onkeyup="navsearch()">
+        </div>
+        <div class="navmenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+
+        </div>
+        <button class="hamberger" onclick="hamberger()">&#9776;</button>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-25">
+
+
+            <h2 style="text-align: center;">Projects</h2>
+            <a href="create_messenger.html">Create Messenger</a>
+            <a href="popup_chat_box.html">Pop Up ChatBox</a>
+
+            <a href="index.html">Type Writer ChatGpt</a>
+            <a href="copy_text_input_clipboard.html">Basic Copy Text</a>
+            <a href="tooltip.html">Using Tolltip</a>
+
+            <a href="Digital_Clock.html">Digital Clock</a>
+            <a href="count_down_timer.html">CountDown Timer</a>
+            <a href="stopwatch.html">Create StopWatch</a>
+
+            <a href="fb_login_form.html">FB login from</a>
+            <a href="tab.html">Tab Button</a>
+            <a href="accordion.html">Accordion</a>
+            <a href="auto_img_slide_show.html">Auto Image Gallery</a>
+            <a href="dropdown_menu.html">DropDown Menu</a>
+            <a href="modal_box.html">Modal Box</a>
+            <a href="modal_image_box.html">Modal Image Box</a>
+            <a href="scroll_indicator.html">Scroll Indicator</a>
+            <a href="To_do_list.html">To Do List</a>
+            <a href="Autocomplete.html">Autocomplete</a>
+
+            <a href="google_remember_our_search.html">Remember Search History</a>
+            <a href="toggle_switch.html">Toggle Switch</a>
+            <a href="calender_layout.html">Calender Layout</a>
+
+            <a href="calender_dynamic.html">Dynamic Calender</a>
+            <a href="alarm_set.html">Alarm Set</a>
+            <a href="password_validation.html">Password Validation</a>
+            <a href="random_password_generator.html">Password Generator</a>
+            <a href="age_calculator.html">Age Calculator</a>
+            <a href="multistep_form.html">Multi Step Form</a>
+            <a href="weather_app.html" class="active">Weather API</a>
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <div class="col-75">
+            <div class="projectname">
+                <h1>Weather Third Party API☁️</h1>
+            </div>
+
+            <div class="beginnerpurpose">
+                <div class="condition">
+                    <span>Note: If you are a beginner, this is something you need to know. Scroll the below section or
+                        <a href="#beginner">Click here</a></span>
+                    <ul>
+                        <li>You have to know difference between <strong>Login</strong> & <strong>Signup </strong> </li>
+                        <li>HTML form Tag</li>
+                        <li>HTML input field</li>
+                        <li>HTML Button</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcontent">
+                <form action="" class="weatherForm">
+                    <input type="text" class="cityInput" placeholder="Enter city..">
+
+                    <button type="sumbit">Get weather</button>
+                </form>
+                <div class="card" style="display: none;">
+                    <!-- <h2 class="cityDisplay">Miami</h2>
+                    <p class="tempDisplay">90°F</p>
+                    <p class="humidityDisplay">Humidity: 75%</p>
+                    <p class="descDisplay">Clear</p>
+                    <p class="weatherEmoji">☀️</p>
+                    <div class="errorDisplay">Please Enter a City</div> -->
+                </div>
+
+            </div>
+
+
+            <div class="htmlcode snipet">
+                <h2>HTML</h2>
+                <div class="htmlcontainer">
+                    <button>copy</button>
+                    <div class="html">
+                        <pre>
+<code>
+
+</code>
+</pre>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="csscode snipet">
+                <h2>CSS</h2>
+                <div class="csscontainer">
+                    <button>copy</button>
+                    <div class="css">
+                        <pre>
+<code>
+
+
+</code>
+            </pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="jscode snipet">
+                <h2>JavaScript</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+                        <pre>
+<code>
+
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="beginnersection" id="beginner">
+                <section>
+                    <h2>HTML DOM</h2>
+                    <ul>
+                        <li><span class="title">querySelector:</span> <span>retuns the first element within the document
+                                that matches the specified CSS selctor. Example: const sampleElement =
+                                document.querySelector('.sample').If there are mutltiple element with the class name
+                                'sample' `querySelector` will return the first matching elements.</span></li>
+                        <li>You can also use getElementById, getElementByClassName, querySelectorAll etc</li>
+                    </ul>
+
+                </section>
+
+                <section>
+                    <h2>String charAt()</h2>
+                    <ul>
+                        <li>The charAt(): method in JavaScript returns the character at a specified index in a string.
+                            The index starts from 0. <span>Example: const str = "Hello, World!";<br>const char =
+                                str.charAt(7)</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>setTimeOut method()</h2>
+                    <ul>
+                        <li>setTimeOut(function-name, millsec): that will execute the provided function after certain
+                            millisecond.<br> clearTimeout(timeoutId) used to cancel time out if needded. </li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2>requestAnimationFrame()</h2>
+                    <ul>
+                        <li><span>requestAnimationFrame():</span> works by calling the provided callback function before
+                            the next repaint, allowing smooth animations.<br>Example
+                            requestAnimationFrame(function_name);</li>
+                    </ul>
+                </section>
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="index.js">
+    </script>
+
+    <script>
+        const weatherForm = document.querySelector(".weatherForm");
+        const cityInput = document.querySelector(".cityInput");
+        const card = document.querySelector(".card");
+        const apikey = "e4607840c6541a8c91990075f10227e8";
+
+
+        weatherForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const city = cityInput.value;
+            if (city) {
+                try {
+                    const weatherData = await getWeatherData(city);
+
+                    displayWeatherInfo(weatherData);
+                }
+                catch (error) {
+                    console.log(error);
+                    DisplayError(error);
+                }
+
+            } else {
+                DisplayError("Please Enter a city");
+            }
+        });
+
+        async function getWeatherData(city) {
+            const apiurl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
+
+            const response = await fetch(apiurl);
+
+            if (!response.ok) {
+                throw new Error("Could not fetch weather Data");
+            }
+
+            //console.log(response);
+
+            return response.json();
+        }
+
+        function displayWeatherInfo(data) {
+            //console.log(data);
+
+            const { name: city, main: { temp, humidity }, weather: [{ id, description }] } = data;
+
+            card.textContent = "";
+            card.style.display = "flex";
+
+
+            const cityDisplay = document.createElement("H1");
+            const tempDisplay = document.createElement("p");
+            const humidityDisplay = document.createElement("p");
+            const descDisplay = document.createElement("p");
+            const weatherEmoji = document.createElement("p");
+
+            cityDisplay.textContent = city;
+            tempDisplay.textContent = `${(temp - 273.15).toFixed(1)}°C`;
+            humidityDisplay.textContent = `Humidity: ${humidity}`;
+            descDisplay.textContent = description;
+
+            weatherEmoji.textContent = getWeatherEmoji(id);
+
+
+            cityDisplay.classList.add("cityDisplay");
+            tempDisplay.classList.add("tempDisplay");
+            humidityDisplay.classList.add("humidityDisplay");
+            descDisplay.classList.add("descDisplay");
+            weatherEmoji.classList.add("weatherEmoji");
+
+
+
+            card.appendChild(cityDisplay);
+            card.appendChild(tempDisplay);
+            card.appendChild(humidityDisplay);
+            card.appendChild(descDisplay);
+            card.appendChild(weatherEmoji);
+
+
+
+
+
+
+        }
+
+        function getWeatherEmoji(weatehrId) {
+            switch (true) {
+                case (weatehrId >= 200 && weatehrId < 300):
+                    return "⛈️";
+                case (weatehrId >= 300 && weatehrId < 400):
+                    return "🌧️";
+                case (weatehrId >= 500 && weatehrId < 600):
+                    return "🌦️";
+
+                case (weatehrId >= 600 && weatehrId < 700):
+                    return "❄️";
+
+                case (weatehrId >= 700 && weatehrId < 800):
+                    return "☃️";
+
+                case (weatehrId == 800):
+                    return "☀️";
+
+                case (weatehrId > 8200 && weatehrId < 810):
+                    return "🌥️"
+
+                default:
+                    return "?";
+
+            }
+
+        }
+
+        function DisplayError(message) {
+            const errorDisplay = document.createElement("p");
+            errorDisplay.textContent = message;
+            errorDisplay.classList.add("errorDisplay");
+
+            card.textContent = "";
+            card.style.display = "flex";
+            card.appendChild(errorDisplay);
+
+
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

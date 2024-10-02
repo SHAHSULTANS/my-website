@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count down timer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #countdown{
+            background-color:dodgerblue;
+            display: flex;
+            align-items: center;
+            color: white;
+            border-radius: 8px;
+            justify-content: center;
+            padding: 15px 10px;
+            font-size: 50px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <div class="search">
+            <input type="text" id="navsearch" placeholder="search here..." class="search"onkeyup="navsearch()">
+        </div>
+        <div class="navmenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+
+        </div>
+        <button class="hamberger" onclick="hamberger()">&#9776;</button>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-25">
+
+            <h2 style="text-align: center;">Projects</h2>
+            <a href="create_messenger.html">Create Messenger</a>
+            <a href="popup_chat_box.html">Pop Up ChatBox</a>
+
+            <a href="index.html">Type Writer ChatGpt</a>
+            <a href="copy_text_input_clipboard.html">Basic Copy Text</a>
+            <a href="tooltip.html">Using Tolltip</a>
+
+            <a href="Digital_Clock.html">Digital Clock</a>
+            <a href="count_down_timer.html" class="active">CountDown Timer</a>
+            <a href="stopwatch.html">Create StopWatch</a>
+
+            <a href="fb_login_form.html">FB login from</a>
+            <a href="tab.html">Tab Button</a>
+            <a href="accordion.html">Accordion</a>
+            <a href="auto_img_slide_show.html">Auto Image Gallery</a>
+            <a href="dropdown_menu.html" >DropDown Menu</a>
+            <a href="modal_box.html">Modal Box</a>
+            <a href="modal_image_box.html">Modal Image Box</a>
+            <a href="scroll_indicator.html">Scroll Indicator</a>
+            <a href="To_do_list.html">To Do List</a>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <div class="col-75">
+            <div class="projectname">
+                <h1>😍Create A CountDown Timer Like Happy New Year!!😘</h1>
+            </div>
+
+            <div class="beginnerpurpose">
+                <div class="condition">
+                    <span>Note: If you are a beginner, first you have to know <a href="Digital_Clock.html">How to create a digital clock ⌚</a></span>
+                    <ul>
+                        <li>Find beginner's guide on how to create a digital clock</li>
+                        <li>Math.floor() function in JS</li>
+                        <li>For design purposes, you need to add some CSS.</li>
+                        <li>Know <a href="#beginner">More</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcontent">
+                
+                <h2>Start CountDown(11 dec, 2027,     11:59:59) PM</h2>
+                <p id="countdown"></p>
+            </div>
+
+
+            <div class="htmlcode snipet">
+                <h2>HTML</h2>
+                <div class="htmlcontainer">
+                    <button>copy</button>
+                    <div class="html">
+<pre>
+<code>
+&lt;h2&gt;Start CountDown(11 dec, 2027, 11:59:59) PM&lt;/h2&gt;<br>
+&lt;p id="countdown"&gt;&lt;/p&gt;<br>
+    
+    
+</code>
+</pre>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="jscode snipet">
+                <h2>JavaScript</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+                        <pre>
+<code>
+clockfun();
+function clockfun(){
+    let presenttime=new Date().getTime();
+
+    let settime=new Date(2027,11,31,23,59,59).getTime();
+    
+    let epic=settime-presenttime;
+
+
+    let day=Math.floor(epic/(86400*1000));
+    let hour=Math.floor((epic%(86400*1000))/(3600*1000));
+
+
+    let minite=Math.floor((epic%(3600*1000))/(60*1000));
+
+    let sec=Math.floor((epic%(60*1000))/(1000));
+
+
+    document.getElementById("countdown").innerHTML=day+"d "+hour+"h "+minite+"m "+sec+"s";
+
+    
+}
+setInterval(clockfun,1000);
+ 
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="jscode snipet">
+                <h2>You can use alternative JS</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+                        <pre>
+<code>
+We can use setTimeout(clockfun, 1000) instead of setInterval(clockfun, 1000) inside the clockfun() function.
+
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="csscode snipet">
+                <h2>CSS</h2>
+                <div class="csscontainer">
+                    <button>copy</button>
+                    <div class="css">
+<pre>
+<code>
+#countdown{
+    background-color:dodgerblue;
+    display: flex;
+    align-items: center;
+    color: white;
+    border-radius: 8px;
+    justify-content: center;
+    padding: 15px 10px;
+    font-size: 50px;
+    font-family: monospace;
+    font-weight: bold;
+}
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="beginnersection" id="beginner">
+                <section>
+                    <h2>Math.floor() Method</h2>
+                    <ul>
+                        <li>The Math.floor() method in JS is used to round a number down to the nearest integer.</li>
+                    </ul>
+                    
+                </section>
+
+
+                <section>
+                    <h2>setInterval()</h2>
+                    <ul>
+                        <li>This method in JS repeatedly calls a function or executes a code with a fixed time delay between each call.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>setTimeout()</h2>
+                    <ul>
+                        <li>This method is used to execute a function or code snippet after a specified delay in milliseconds.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>date.get....()</h2>
+                    <ul>
+                        <li>getDate(): Returns the day of the month(1-31)</li>
+                        <li>getMonth(): Returns the month(0-11)</li>
+                        <li>getFullYear(): Returns the year(4 digit year)</li>
+                        <li>getDay(): Returns the day of the week(0-6)</li>
+                        <li>getHours(): Returns the hours(0-23)</li>
+                        <li>getMinutes(): Returns the minites(0-59)</li>
+                        <li>getSeconds(): Returns the seconds(0-59)</li>
+                        <li>getMilliseconds(): Returns the milliseconds(0-999)</li>
+                        <li>getTime(): Returns the number of milliseconds since January 1, 1970, 00:00:00 UTC</li>
+                    </ul>
+                </section>
+
+
+
+        </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="index.js">
+    </script>
+
+    <script>
+        clockfun();
+        function clockfun(){
+            let presenttime=new Date().getTime();
+
+            let settime=new Date(2027,11,31,23,59,59).getTime();
+            
+            let epic=settime-presenttime;
+
+
+            let day=Math.floor(epic/(86400*1000));
+            let hour=Math.floor((epic%(86400*1000))/(3600*1000));
+
+
+            let minite=Math.floor((epic%(3600*1000))/(60*1000));
+
+            let sec=Math.floor((epic%(60*1000))/(1000));
+
+
+            document.getElementById("countdown").innerHTML=day+"d "+hour+"h "+minite+"m "+sec+"s";
+            
+            setTimeout(clockfun,1000);
+
+            
+        }
+        //setInterval(clockfun,1000);
+        
+
+
+     
+    </script>
+
+
+</body>
+
+</html>

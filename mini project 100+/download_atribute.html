@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger front clone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .imgage{
+            width: 95%;
+            margin: auto;
+        }
+        img{
+            width: 100%;
+        }
+     
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <div class="search">
+            <input type="text" id="navsearch" placeholder="search here..." class="search" onkeyup="navsearch()">
+        </div>
+        <div class="navmenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+
+        </div>
+        <button class="hamberger" onclick="hamberger()">&#9776;</button>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-25">
+
+            <h2 style="text-align: center;">Projects</h2>
+            <a href="create_messenger.html" >Create Messenger</a>
+            <a href="popup_chat_box.html">Pop Up ChatBox</a>
+            
+            <a href="index.html">Type Writer ChatGpt</a>
+            <a href="download_atribute.html" class="active">Download</a>
+            <a href="copy_text_input_clipboard.html">Basic Copy Text</a>
+            <a href="tooltip.html">Using Tolltip</a>
+
+            <a href="Digital_Clock.html">Digital Clock</a>
+            <a href="count_down_timer.html">CountDown Timer</a>
+            <a href="stopwatch.html">Create StopWatch</a>
+
+            <a href="fb_login_form.html">FB login from</a>
+            <a href="tab.html">Tab Button</a>
+            <a href="accordion.html">Accordion</a>
+            <a href="auto_img_slide_show.html">Auto Image Gallery</a>
+            <a href="dropdown_menu.html" >DropDown Menu</a>
+            <a href="modal_box.html">Modal Box</a>
+            <a href="modal_image_box.html">Modal Image Box</a>
+            <a href="scroll_indicator.html">Scroll Indicator</a>
+            <a href="To_do_list.html">To Do List</a>
+
+
+
+
+
+
+        </div>
+
+
+        <div class="col-75">
+            <div class="projectname">
+                <h1>⬇️How To Download Link🔗</h1>
+            </div>
+
+            <div class="beginnerpurpose">
+                <div class="condition">
+                    <strong>The download atribute in HTML is used with <i>anchor('&lt;a&gt;') </i>tag to specify that the target resource should be downloaded when the link is clicked.</a></strong>
+                    <span>Note: If you are a beginner, this is something you need to know. Scroll the below section or
+                        <a href="#beginner">Click here</a></span>
+                    <ul>
+                       <li>The anchor tag &lt;a&gt; in HTML</li>
+                       <li>createElement in JS</li>
+                       <li>appenChild & removeChild in JS</li>
+                       <li>Difference between click & onclick event.</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcontent">
+                <h3>Click to download the image</h3>
+                <a href="All images\img_snow_wide.jpg" download>
+                    <div class="imgage">
+                        <img src="All images\img_snow_wide.jpg" alt="snow-wide">
+                    </div>
+                </a>
+                <h3>Click the link below to download the song.It is a doc file</h3>
+
+                <a href="All images\Song.docx" download>Song</a>
+
+
+
+
+            </div>
+
+
+            <div class="htmlcode snipet">
+                <h2>HTML</h2>
+                <h2>No need to add CSS or JS here</h2>
+
+                <div class="htmlcontainer">
+                    <button>copy</button>
+                    <div class="html">
+                        <pre>
+<code>
+&lt;h3&gt;Click to download the image&lt;/h3&gt;
+&lt;a href="All images\img_snow_wide.jpg" download&gt;
+    &lt;div class="imgage"&gt;
+        &lt;img src="All images\img_snow_wide.jpg" alt="snow-wide"&gt;
+    &lt;/div&gt;
+&lt;/a&gt;
+&lt;h3&gt;Click the link below to download the song.It is a doc file&lt;/h3&gt;
+
+&lt;a href="All images\Song.docx" download&gt;Song&lt;/a&gt; 
+</code>
+</pre>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="jscode snipet">
+                <h3>If you want to dynamically create a download link using JS. you can do something like this.</h3>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+                        <pre>
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Download Link Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;button id="downloadBtn"&gt;Download File&lt;/button&gt;
+
+    &lt;script&gt;
+        document.getElementById("downloadBtn").addEventListener("click", function() {
+            // Create an anchor element
+            const a = document.createElement('a');
+
+            // Set the href and download attributes
+            a.href = 'path/to/yourfile.txt';
+            a.download = 'yourfile.txt';
+
+            // Append the anchor to the body
+            document.body.appendChild(a);
+
+            // Programmatically click the anchor to trigger the download
+            a.click();
+
+            // Remove the anchor from the document
+            document.body.removeChild(a);
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="beginnersection" id="beginner">
+                <section>
+                    <h2>Application</h2>
+                    <ul>
+                        <li>Download Images</li>
+                        <li>Saving User Settings</li>
+                        <li>Exporting Data from web Application</li>
+                        <li>Automatic Data Backup</li>
+                    </ul>
+                </section>
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <script src="index.js">
+    </script>
+
+    <script>
+        let check=document.querySelector(".showcontent a");
+        console.log(check.download);
+
+    </script>
+
+
+</body>
+
+</html>

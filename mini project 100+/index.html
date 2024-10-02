@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Writer Like ChatGpt</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <div class="search">
+            <input type="text" id="navsearch" placeholder="search here..." class="search" onkeyup="navsearch()">
+        </div>
+        <div class="navmenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+
+        </div>
+        <button class="hamberger" onclick="hamberger()">&#9776;</button>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-25">
+
+            <h2 style="text-align: center;">Projects</h2>
+            <a href="create_messenger.html">Create Messenger</a>
+            <a href="popup_chat_box.html">Pop Up ChatBox</a>
+
+            <a href="index.html" class="active">Type Writer ChatGpt</a>
+            <a href="copy_text_input_clipboard.html">Basic Copy Text</a>
+            <a href="tooltip.html">Using Tolltip</a>
+
+            <a href="Digital_Clock.html">Digital Clock</a>
+            <a href="count_down_timer.html">CountDown Timer</a>
+            <a href="stopwatch.html">Create StopWatch</a>
+
+            <a href="fb_login_form.html">FB login from</a>
+            <a href="tab.html">Tab Button</a>
+            <a href="accordion.html">Accordion</a>
+            <a href="auto_img_slide_show.html">Auto Image Gallery</a>
+            <a href="dropdown_menu.html" >DropDown Menu</a>
+            <a href="modal_box.html">Modal Box</a>
+            <a href="modal_image_box.html">Modal Image Box</a>
+            <a href="scroll_indicator.html">Scroll Indicator</a>
+            <a href="To_do_list.html">To Do List</a>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <div class="col-75">
+            <div class="projectname">
+                <h1>📝Typewriter Like ChatGpt✍️</h1>
+            </div>
+
+            <div class="beginnerpurpose">
+                <div class="condition">
+                    <span>Note: If you are a beginner, this is something you need to know. Scroll the below section or <a href="#beginner">Click  here</a></span>
+                    <ul>
+                        <li>HTML DOM</li>
+                        <li>string charAt() mehtod in JS</li>
+                        <li>setTimeOut method in JS</li>
+                        <li>setInteval method in JS</li>
+                        <li>requestAnimationFrame() method in JS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcontent">
+                <h3>Click the below button and write a content like ChaTGpt</h3>
+                <button onclick="typewriter()">Click Me</button>
+                <p id="demo" style="background-color: white;"></p>
+            </div>
+
+
+            <div class="htmlcode snipet">
+                <h2>HTML</h2>
+                <div class="htmlcontainer">
+                    <button>copy</button>
+                    <div class="html">
+<pre>
+<code>
+&lt;h3&gt;Click the below button and write a content like ChaTGpt&lt;/h3&gt;<br>
+&lt;button onclick="typewriter()"&gt;Click Me&lt;/button&gt;<br>
+&lt;p id="demo" style="background-color: white;"&gt;&lt;/p&gt;
+</code>
+</pre>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="jscode snipet">
+                <h2>JavaScript</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+                        <pre>
+<code>
+var i = 0;
+let text = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae libero itaque, amet reprehenderit officiis magnam vel accusantium maiores praesentium, saepe dolore accusamus eveniet. Asperiores, doloribus in corporis error voluptas consequuntur?";
+
+
+let demo = document.getElementById("demo");
+function typewriter() {
+    demo.innerHTML = "";
+    i = 0;
+    clearTimeout(written);
+    console.log(demo);
+    written();
+
+}
+
+
+function written() {
+    //console.log(i);
+    var clear= setTimeout(written, 50);
+    if (i < text.length) {
+        demo.innerHTML += text.charAt(i);
+        i++;
+    }
+    else{
+        clearTimeout(clear);
+    }
+
+    
+}
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="jscode snipet">
+                <h2>You Can Use Alternative JavaScript requestAnimationFrame() Method.</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+<pre>
+<code>
+
+    var i=0;
+    let text=" Lorem ipsum dolor sit amet consectetur adipisicing elit";
+    let para=document.querySelector("#demo");
+
+    function typewriter(){
+
+        if(i< text.length){
+            para.innerHTML+=text.charAt(i);
+            i++;
+        }
+        requestAnimationFrame(typewriter);
+    }
+
+   
+
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="beginnersection" id="beginner">
+                <section>
+                    <h2>HTML DOM</h2>
+                    <ul>
+                        <li><span class="title">querySelector:</span> <span>retuns the first element within the document that matches the specified CSS selctor. Example: const sampleElement = document.querySelector('.sample').If there are mutltiple element with the class name 'sample' `querySelector` will return the first matching elements.</span></li>
+                        <li>You can also use getElementById, getElementByClassName, querySelectorAll etc</li>
+                    </ul>
+                    
+                </section>
+
+                <section>
+                    <h2>String charAt()</h2>
+                    <ul>
+                        <li>The charAt(): method in JavaScript returns the character at a specified index in a string. The index starts from 0. <span>Example: const str = "Hello, World!";<br>const char = str.charAt(7)</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>setTimeOut method()</h2>
+                    <ul>
+                        <li>setTimeOut(function-name, millsec): that will execute the provided function after certain millisecond.<br> clearTimeout(timeoutId) used to cancel time out if needded. </li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2>requestAnimationFrame()</h2>
+                    <ul>
+                        <li><span>requestAnimationFrame():</span> works by calling the provided callback function before the next repaint, allowing smooth animations.<br>Example requestAnimationFrame(function_name);</li>
+                    </ul>
+                </section>
+
+
+
+        </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="index.js">
+    </script>
+
+    <script>
+
+        var i = 0;
+        let text = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae libero itaque, amet reprehenderit officiis magnam vel accusantium maiores praesentium, saepe dolore accusamus eveniet. Asperiores, doloribus in corporis error voluptas consequuntur?";
+       
+
+        let para=document.querySelector("#demo");
+
+        function typewriter(){
+            if(i==0){
+                para.innerHTML='';
+            }
+    
+            if(i< text.length){
+                para.innerHTML+=text.charAt(i);
+                i++;
+                requestAnimationFrame(typewriter);
+            }
+            else{
+                i=0;
+                //para.innerHTML='';
+            }
+
+          
+        }
+        
+        
+          
+
+
+
+
+
+        
+    </script>
+
+
+</body>
+
+</html>

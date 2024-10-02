@@ -1,0 +1,396 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Image slide show </title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .imgrow{
+            width: 98%;
+            margin: auto;
+            
+        }
+        .slideshow{
+            box-shadow: 2px 2px 3px 1px #333;
+        }
+        
+        .imgdisplay img{
+            width: 100%;
+            margin: auto;
+        }
+        .caption{
+            background-color: #333;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            margin-top: -5px;
+            font-size: 20px;
+        }
+        .gallery{
+            width:100%; 
+            display: flex;
+            padding-top: 3px;
+            box-shadow: 2px 2px 3px 1px #333;
+            
+        }
+        .gallery img{
+            opacity: 0.5;
+            width: 16.66%;
+        }
+        .gallery div img{
+            width: 100%;
+        }
+        .gallery .Inopacity {
+            opacity: 1;
+        }
+      
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <div class="search">
+            <input type="text" id="navsearch" placeholder="search here..." class="search" onkeyup="navsearch()">
+        </div>
+        <div class="navmenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+
+        </div>
+        <button class="hamberger" onclick="hamberger()">&#9776;</button>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-25">
+
+            <h2 style="text-align: center;">Projects</h2>
+            <a href="create_messenger.html">Create Messenger</a>
+            <a href="popup_chat_box.html">Pop Up ChatBox</a>
+
+            <a href="index.html">Type Writer ChatGpt</a>
+            <a href="copy_text_input_clipboard.html">Basic Copy Text</a>
+            <a href="tooltip.html">Using Tolltip</a>
+
+            <a href="Digital_Clock.html">Digital Clock</a>
+            <a href="count_down_timer.html">CountDown Timer</a>
+            <a href="stopwatch.html">Create StopWatch</a>
+
+            <a href="fb_login_form.html">FB login from</a>
+            <a href="tab.html" >Tab Button</a>
+            <a href="accordion.html">Accordion</a>
+            <a href="auto_img_slide_show.html" class="active">Auto Image Gallery</a>
+            <a href="dropdown_menu.html" >DropDown Menu</a>
+            <a href="modal_box.html">Modal Box</a>
+            <a href="modal_image_box.html">Modal Image Box</a>
+            <a href="scroll_indicator.html">Scroll Indicator</a>
+            <a href="To_do_list.html">To Do List</a>
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <div class="col-75">
+            <div class="projectname">
+                <h1>Automatic Image Change Like Daraz Home Page Layout Or Any Educational Website🖼️</h1>
+            </div>
+
+            <div class="beginnerpurpose">
+                <div class="condition">
+                    <span>Note: If you are a beginner, this is something you need to know. Scroll the below section or <a href="#beginner">Click  here</a></span>
+                    <ul>
+                        <li>HTML DOM (like querySelector,querySelectorAll etc)</li>
+                        <li>setTimeOut method in JS</li>
+                        <li>You need to know CSS (display, box-shadow, opacity etc) for some design purpose</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="showcontent">
+                <h3>After being 2 second each image will be changed.</h3>
+                <div class="imgrow">
+                    <div class="slideshow">
+                        <div class="imgdisplay">
+                            <img src="All images\img_lights_wide.jpg" alt="">
+                        </div>
+                        <div class="caption">Hello</div>
+                    </div>
+
+                    <div class="gallery">
+                        <div><img src="All images\img_snow_wide.jpg" alt="img_snow_wide"></div>
+                        <div><img src="All images\img_mountains_wide.jpg" alt="img_mountains_wide"></div>
+                        <div><img src="All images\img_lights_wide.jpg" alt="img_lights_wide"></div>
+                        <div><img src="All images\img_nature_wide.jpg" alt="img_nature_wide"></div>
+                        <div><img src="All images\img_5terre_wide.jpg" alt="img_5terre_wide"></div>
+                        <div><img src="All images\img_woods_wide.jpg" alt="img_woods_wide"></div>
+                    </div>
+
+                    
+                </div>
+
+
+            </div>
+
+
+
+            <div class="htmlcode snipet">
+                <h2>HTML</h2>
+                <div class="htmlcontainer">
+                    <button>copy</button>
+                    <div class="html">
+<pre>
+<code>
+&lt;div class="showcontent"&gt;<br>
+&lt;h3&gt;After being 2 second each image will be changed.&lt;/h3&gt;<br>
+&lt;div class="imgrow"&gt;<br>
+&lt;div class="slideshow"&gt;<br>
+    &lt;div class="imgdisplay"&gt;<br>
+        &lt;img src="All images\img_lights_wide.jpg" alt=""&gt;<br>
+    &lt;/div&gt;<br>
+    &lt;div class="caption"&gt;Hello&lt;/div&gt;<br>
+&lt;/div&gt;<br>
+
+&lt;div class="gallery"&gt;<br>
+    &lt;div&gt;&lt;img src="All images\img_snow_wide.jpg" alt="img_snow_wide"&gt;&lt;/div&gt;<br>
+    &lt;div&gt;&lt;img src="All images\img_mountains_wide.jpg" alt="img_mountains_wide"&gt;&lt;/div&gt;<br>
+    &lt;div&gt;&lt;img src="All images\img_lights_wide.jpg" alt="img_lights_wide"&gt;&lt;/div&gt;<br>
+    &lt;div&gt;&lt;img src="All images\img_nature_wide.jpg" alt="img_nature_wide"&gt;&lt;/div&gt;<br>
+    &lt;div&gt;&lt;img src="All images\img_5terre_wide.jpg" alt="img_5terre_wide"&gt;&lt;/div&gt;<br>
+    &lt;div&gt;&lt;img src="All images\img_woods_wide.jpg" alt="img_woods_wide"&gt;&lt;/div&gt;<br>
+&lt;/div&gt;<br>
+
+
+&lt;/div&gt;<br>
+
+</code>
+</pre>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="jscode snipet">
+                <h2>JavaScript</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+                        <pre>
+<code>
+let index=0;
+let images=document.querySelectorAll(".gallery div img");
+
+let showed=document.querySelector(".slideshow .imgdisplay img");
+
+
+let captn=document.querySelector(".slideshow .caption");
+//console.log(captn.innerHTML);
+// console.log(showed.src);
+myfun();
+
+function myfun(){ 
+    if(index>=images.length){
+        index=0;
+    }
+    index+=1;
+    for(let i=0;i< images.length;i++){
+        images[i].className=images[i].className.replace("Inopacity","");
+    }
+    images[index-1].className+="Inopacity";
+    //console.log(images[index-1]);
+
+    showed.src=images[index-1].src;
+    captn.innerHTML=images[index-1].alt;
+
+    setTimeout(myfun,2000);
+    
+}
+
+    
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="csscode snipet">
+                <h2>CSS</h2>
+                <div class="csscontainer">
+                    <button>copy</button>
+                    <div class="css">
+<pre>
+<code>
+.imgrow{
+    width: 98%;
+    margin: auto;
+    
+}
+.slideshow{
+    box-shadow: 2px 2px 3px 1px #333;
+}
+
+.imgdisplay img{
+    width: 100%;
+    margin: auto;
+}
+.caption{
+    background-color: #333;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    margin-top: -5px;
+    font-size: 20px;
+}
+.gallery{
+    width:100%; 
+    display: flex;
+    padding-top: 3px;
+    box-shadow: 2px 2px 3px 1px #333;
+    
+}
+.gallery img{
+    opacity: 0.5;
+    width: 16.66%;
+}
+.gallery div img{
+    width: 100%;
+}
+.gallery .Inopacity {
+    opacity: 1;
+}
+
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="beginnersection" id="beginner">
+                <section>
+                    <h2>HTML DOM</h2>
+                    <ul>
+                        <li><span class="title">querySelector:</span> <span>retuns the first element within the document that matches the specified CSS selctor. Example: const sampleElement = document.querySelector('.sample').If there are mutltiple element with the class name 'sample' `querySelector` will return the first matching elements.</span></li>
+                        <li>You can also use getElementById, getElementByClassName, querySelectorAll etc</li>
+                    </ul>
+                    
+                </section>
+
+                <section>
+                    <h2>String charAt()</h2>
+                    <ul>
+                        <li>The charAt(): method in JavaScript returns the character at a specified index in a string. The index starts from 0. <span>Example: const str = "Hello, World!";<br>const char = str.charAt(7)</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>setTimeOut method()</h2>
+                    <ul>
+                        <li>setTimeOut(function-name, millsec): that will execute the provided function after certain millisecond.<br> clearTimeout(timeoutId) used to cancel time out if needded. </li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2>requestAnimationFrame()</h2>
+                    <ul>
+                        <li><span>requestAnimationFrame():</span> works by calling the provided callback function before the next repaint, allowing smooth animations.<br>Example requestAnimationFrame(function_name);</li>
+                    </ul>
+                </section>
+
+
+
+        </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="index.js">
+    </script>
+
+    <script>
+        let index=0;
+        let images=document.querySelectorAll(".gallery div img");
+
+        let showed=document.querySelector(".slideshow .imgdisplay img");
+        
+
+        let captn=document.querySelector(".slideshow .caption");
+        //console.log(captn.innerHTML);
+       // console.log(showed.src);
+        myfun();
+
+        function myfun(){ 
+            if(index>=images.length){
+                index=0;
+            }
+            index+=1;
+            for(let i=0;i< images.length;i++){
+                images[i].className=images[i].className.replace("Inopacity","");
+            }
+            images[index-1].className+="Inopacity";
+            //console.log(images[index-1]);
+
+            showed.src=images[index-1].src;
+            captn.innerHTML=images[index-1].alt;
+
+           setTimeout(myfun,2000);
+            
+        }
+
+                
+            
+        
+    </script>
+
+
+</body>
+
+</html>

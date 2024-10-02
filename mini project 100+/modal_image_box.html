@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Image box</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .modalImgRow .modalImges {
+            width: 95%;
+            margin: auto;
+            display: flex;
+        }
+
+        .modalImges div {
+            width: 16.6%;
+        }
+
+        .modalImges div img {
+            width: 100%;
+            min-height: 45px;
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        .modalImges div img:hover {
+            opacity: 1;
+        }
+
+        .modal {
+            background-color: rgba(0, 0, 0, 0.87);
+            padding-top: 100px;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 88px;
+            left: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            box-shadow: 2px 2px 3px 3px black;
+            animation-name: ex;
+            animation-timing-function: ease-in-out;
+            animation-duration: 0.7s;
+            display: none;
+        }
+
+        @keyframes ex {
+            from {
+                width: 0;
+                opacity: 0.5;
+            }
+
+            to {
+                width: 100;
+                opacity: 1;
+            }
+
+        }
+
+        .modal div {
+            width: 90%;
+            margin: auto;
+        }
+
+        .modal div img {
+            width: 100%;
+
+        }
+
+        .modal span {
+            color: white;
+            position: absolute;
+            right: 8%;
+            top: 10%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .modal span:hover {
+            color: red;
+        }
+
+        .modal .caption {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 20px;
+            margin-top: -3px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <div class="search">
+            <input type="text" id="navsearch" placeholder="search here..." class="search" onkeyup="navsearch()">
+        </div>
+        <div class="navmenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+
+        </div>
+        <button class="hamberger" onclick="hamberger()">&#9776;</button>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-25">
+
+            <h2 style="text-align: center;">Projects</h2>
+            <a href="create_messenger.html">Create Messenger</a>
+            <a href="popup_chat_box.html">Pop Up ChatBox</a>
+
+            <a href="index.html">Type Writer ChatGpt</a>
+            <a href="copy_text_input_clipboard.html">Basic Copy Text</a>
+            <a href="tooltip.html">Using Tolltip</a>
+
+            <a href="Digital_Clock.html">Digital Clock</a>
+            <a href="count_down_timer.html">CountDown Timer</a>
+            <a href="stopwatch.html">Create StopWatch</a>
+
+            <a href="fb_login_form.html">FB login from</a>
+            <a href="tab.html">Tab Button</a>
+            <a href="accordion.html">Accordion</a>
+            <a href="auto_img_slide_show.html">Auto Image Gallery</a>
+            <a href="dropdown_menu.html">DropDown Menu</a>
+            <a href="modal_box.html">Modal Box</a>
+            <a href="modal_image_box.html" class="active">Modal Image Box</a>
+            <a href="scroll_indicator.html">Scroll Indicator</a>
+            <a href="To_do_list.html">To Do List</a>
+
+
+
+
+
+
+        </div>
+
+
+        <div class="col-75">
+            <div class="projectname">
+                <h1>📸How To Create Modal Image Box🖼️</h1>
+            </div>
+
+            <div class="beginnerpurpose">
+                <div class="condition">
+                    <span>Note: If you are a beginner, this is something you need to know. Scroll the below section or
+                        <a href="#beginner">Click here</a></span>
+                    <ul>
+                        <li>window.onclick event in JS</li>
+                        <li>Event in JS</li>
+                        <li>position property in CSS</li>
+                        <li>Animation, overflow, z-index property in CSS</li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="showcontent">
+                <h3>Click each images in the below.</h3>
+                <div class="modalImgRow">
+                    <div class="modalImges">
+                        <div><img src="All images\img_snow_wide.jpg" alt="img_snow_wide"></div>
+                        <div><img src="All images\img_mountains_wide.jpg" alt="img_mountains_wide"></div>
+                        <div><img src="All images\img_lights_wide.jpg" alt="img_lights_wide"></div>
+                        <div><img src="All images\img_nature_wide.jpg" alt="img_nature_wide"></div>
+                        <div><img src="All images\img_5terre_wide.jpg" alt="img_5terre_wide"></div>
+                        <div><img src="All images\img_woods_wide.jpg" alt="img_woods_wide"></div>
+                    </div>
+                    <div class="modal">
+                        <span onclick="this.parentElement.style.display='none';">X</span>
+                        <div class="modalShowed">
+                            <div><img src="All images\img_snow_wide.jpg" alt="img_snow_wide"></div>
+                            <div class="caption">Hello</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+            <div class="htmlcode snipet">
+                <h2>HTML</h2>
+                <div class="htmlcontainer">
+                    <button>copy</button>
+                    <div class="html">
+                        <pre>
+<code>
+&lt;div class="showcontent"&gt;<br>
+&lt;div class="modalImgRow"&gt;<br>
+    &lt;div class="modalImges"&gt;<br>
+        &lt;div&gt;&lt;img src="All images\img_snow_wide.jpg" alt="img_snow_wide"&gt;&lt;/div&gt;<br>
+        &lt;div&gt;&lt;img src="All images\img_mountains_wide.jpg" alt="img_mountains_wide"&gt;&lt;/div&gt;<br>
+        &lt;div&gt;&lt;img src="All images\img_lights_wide.jpg" alt="img_lights_wide"&gt;&lt;/div&gt;<br>
+        &lt;div&gt;&lt;img src="All images\img_nature_wide.jpg" alt="img_nature_wide"&gt;&lt;/div&gt;<br>
+        &lt;div&gt;&lt;img src="All images\img_5terre_wide.jpg" alt="img_5terre_wide"&gt;&lt;/div&gt;<br>
+        &lt;div&gt;&lt;img src="All images\img_woods_wide.jpg" alt="img_woods_wide"&gt;&lt;/div&gt;<br>
+    &lt;/div&gt;<br>
+    &lt;div class="modal"&gt;<br>
+        &lt;span onclick="this.parentElement.style.display='none';"&gt;X&lt;/span&gt;<br>
+        &lt;div class="modalShowed"&gt;<br>
+            &lt;div&gt;&lt;img src="All images\img_snow_wide.jpg" alt="img_snow_wide"&gt;&lt;/div&gt;<br>
+            &lt;div class="caption"&gt;Hello&lt;/div&gt;<br>
+        &lt;/div&gt;<br>
+    &lt;/div&gt;<br>
+&lt;/div&gt;<br>
+
+&lt;/div&gt;<br>
+</code>
+</pre>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="jscode snipet">
+                <h2>JavaScript</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+                        <pre>
+<code>
+window.onclick=function(event){
+    let target=event.target.parentElement.parentElement.className;
+
+    let images=document.querySelectorAll(".modalImges div img");
+
+    let showed=document.querySelector(".modal .modalShowed div img");
+    console.log(showed);
+
+    let caption=document.querySelector(".caption");
+    //console.log(event.target);
+    if(target=="modalImges"){
+        //console.log("Hell")
+        //console.log(images[0]);
+        for(let i=0;i< images.length;i++){
+            if(images[i]==event.target){
+                //console.log("YES "+ i);
+                showed.src=images[i].src;
+                document.querySelector(".modal").style.display="block";
+                caption.innerHTML=images[i].alt;
+            }
+        }
+    }
+}
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="csscode snipet">
+                <h2>CSS</h2>
+                <div class="csscontainer">
+                    <button>copy</button>
+                    <div class="css">
+                        <pre>
+<code>
+.modalImgRow .modalImges {
+    width: 95%;
+    margin: auto;
+    display: flex;
+}
+
+.modalImges div {
+    width: 16.6%;
+}
+
+.modalImges div img {
+    width: 100%;
+    min-height: 45px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.modalImges div img:hover {
+    opacity: 1;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.87);
+    padding-top: 100px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 88px;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: 2px 2px 3px 3px black;
+    animation-name: ex;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.7s;
+    display: none;
+}
+
+@keyframes ex {
+    from {
+        width: 0;
+        opacity: 0.5;
+    }
+
+    to {
+        width: 100;
+        opacity: 1;
+    }
+
+}
+
+.modal div {
+    width: 90%;
+    margin: auto;
+}
+
+.modal div img {
+    width: 100%;
+
+}
+
+.modal span {
+    color: white;
+    position: absolute;
+    right: 8%;
+    top: 10%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.modal span:hover {
+    color: red;
+}
+
+.modal .caption {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+    margin-top: -3px;
+}
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="beginnersection" id="beginner">
+                <section>
+                    <h2>HTML DOM</h2>
+                    <ul>
+                        <li><span class="title">querySelector:</span> <span>retuns the first element within the document
+                                that matches the specified CSS selctor. Example: const sampleElement =
+                                document.querySelector('.sample').If there are mutltiple element with the class name
+                                'sample' `querySelector` will return the first matching elements.</span></li>
+                        <li>You can also use getElementById, getElementByClassName, querySelectorAll etc</li>
+                    </ul>
+
+                </section>
+
+                <section>
+                    <h2>String charAt()</h2>
+                    <ul>
+                        <li>The charAt(): method in JavaScript returns the character at a specified index in a string.
+                            The index starts from 0. <span>Example: const str = "Hello, World!";<br>const char =
+                                str.charAt(7)</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>setTimeOut method()</h2>
+                    <ul>
+                        <li>setTimeOut(function-name, millsec): that will execute the provided function after certain
+                            millisecond.<br> clearTimeout(timeoutId) used to cancel time out if needded. </li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2>requestAnimationFrame()</h2>
+                    <ul>
+                        <li><span>requestAnimationFrame():</span> works by calling the provided callback function before
+                            the next repaint, allowing smooth animations.<br>Example
+                            requestAnimationFrame(function_name);</li>
+                    </ul>
+                </section>
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="index.js">
+    </script>
+
+    <script>
+        window.onclick = function (event) {
+            let target = event.target.parentElement.parentElement.className;
+
+            let images = document.querySelectorAll(".modalImges div img");
+
+            let showed = document.querySelector(".modal .modalShowed div img");
+
+            let caption = document.querySelector(".caption");
+            //console.log(event.target);
+            
+            if (target == "modalImges") {
+                //console.log("Hell")
+                //console.log(images[0]);
+                for (let i = 0; i < images.length; i++) {
+                    if (images[i] == event.target) {
+                        //console.log("YES "+ i);
+                        showed.src = images[i].src;
+                        document.querySelector(".modal").style.display = "block";
+                        caption.innerHTML = images[i].alt;
+                    }
+                }
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

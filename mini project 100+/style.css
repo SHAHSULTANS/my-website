@@ -1,0 +1,272 @@
+
+
+
+body{
+    margin:0;
+    
+    
+}
+*{
+    box-sizing: border-box;
+}
+li{
+    padding-top: 5px;
+
+}
+p,li,code,strong,span{
+    line-height: 1.5;
+}
+h1{
+    text-align: center; /* Center-align headings */
+}
+.col-75 p {
+    text-align: left; /* Left-align body text */
+    font-size: 1.1rem;
+}
+code{
+    font-size: 15px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#3A3F44 ;
+    top: 0px;
+    position:fixed;
+    width: 100%;
+    color: white;
+    transition:0.0s;
+    transition-timing-function:ease-in-out;
+    z-index: 10;
+}
+.navmenu{
+    background-color:rgba(0, 0, 0, 0.515);
+    padding: 20px 8px;
+    border-radius: 5px 0 30%  10px;
+}
+.navmenu a{
+    text-decoration:none;
+    padding: 14px 16px;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    color:#ffffff;
+}
+.navmenu a:hover{
+    background-color: #aaa;
+    border-radius: 5px;
+    color: black;
+}
+.nav .logo{
+    padding-left: 18px;
+    font-size: 28px;
+    font-weight: bold;
+}
+#navsearch{
+    width: 200px;
+    padding: 8px 14px;
+    border-radius:10px;
+    font-size: 18px;
+}
+.nav .hamberger{
+    background-color: dodgerblue;
+    border: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/*To design a row div element */
+.row{
+    float: left;
+    position: relative;
+    overflow: hidden;
+   
+    
+    
+}
+.col-25{
+    background-color:#282C34;
+    color: white;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    width: 20%;
+    font-size: 18px;
+    white-space:nowrap;
+    padding-left: 2px;
+    padding-bottom: 100px;
+    
+}
+.col-25 a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding:5px 8px;
+    text-align: left;
+    line-height: 1.4;
+    
+}
+.col-25 a:hover{
+    background-color: dodgerblue;
+}
+.col-25 a.active{
+    background-color: #04AA6A;
+}
+.col-75{
+    padding-top: 15px;
+    padding-bottom: 150px;
+    margin-left: 20%;
+    width: 70%;
+    padding-left: 8px;
+    position:fixed;
+    height: 100vh;
+    overflow: auto;
+    word-wrap: break-word;
+    background-color: #ddc;
+}
+
+.col-75::-webkit-scrollbar{
+    display: none;
+}
+
+
+.col-75 .projectname{
+    text-align: center;
+    width: 100%;
+   
+}
+
+.col-75 .beginnerpurpose{
+    background-color: inherit;
+    padding: 8px;
+    padding-left: 5px;
+    font-size: 18px;
+    width: 100%;
+    
+}
+.col-75 .beginnerpurpose .condition{
+    background-color: rgb(255, 255, 255);
+    padding: 4px;
+}
+.col-75 .showcontent{
+    background-color:bisque;
+    margin: 0;
+    padding:14px;
+    font-size: 18px;
+    position: relative;
+}
+
+
+.col-75 .snipet{
+    background-color: #eee;
+    position: relative;
+    padding:8px;
+    color:black;
+    font-size: 18px;
+}
+.col-75 .htmlcontainer,.col-75 .jscontainer,.csscontainer{
+    background-color:rgba(255, 255, 255, 0.562);
+    padding: 8px;
+    color: black;
+}
+
+
+
+.col-75 .beginnersection section{
+    padding:5px;
+    padding-left: 15px;
+    background-color: bisque;
+    white-space:normal;
+    
+    
+}
+
+
+.col-75 ul:has(pre> code),.col-75 pre:has(code){
+    padding-left: 10px;
+    background-color: #333;
+    color: rgba(6, 249, 50, 0.961);
+    margin-top: 5px;
+}
+#application{
+    padding-right:5px;
+}
+.col-75 #application article{
+    background-color:#a6e1d4;
+    padding-left: 5px;
+    margin-bottom: 5px;
+    
+}
+
+
+
+
+
+pre{
+    white-space:pre-wrap;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:600px) {
+    .nav .hamberger{
+        display: block;
+    }
+    .navmenu{
+        padding: 16px;
+        display:none;
+    }
+    .navmenu a{
+        padding: 8px;
+    }
+    #navsearch{
+        width: 160px;
+    }
+}
+
+@media screen and (max-width:345px) {
+    .col-25{
+        
+        width:0%;
+        padding-bottom: 500px;
+        z-index: 10;
+        
+    }
+    .col-75{
+        
+        top:85px;
+        width: 100%;
+        margin-left: 0;
+        left: 0;
+        
+        word-wrap:break-word;
+        
+    }
+    #navsearch{
+        width: 100px;
+    }
+    .navmenu{
+        padding: 5px;
+    }
+    .navmenu a{
+        display: block;
+        padding: 3px 6px;   
+    }
+
+    
+}
+
+

@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copying text</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .tooltiprow{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tooltiprow input[type=text]{
+            padding: 8px 16px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        .tooltipcontent{
+            position: relative;
+        }
+        .tooltipcontent button{
+            padding: 8px 16px;
+            background-color:rgb(0, 255, 85);
+            color:white;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .tooltipcontent button:hover{
+            background-color:rgb(0, 255, 123);
+            color:black;
+            
+        }
+        .tooltiptext{
+            position: absolute;
+            white-space: nowrap;
+            top:-107%;
+            padding: 6px;
+            left: 50%;
+            transform: translate(-50%);
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            
+            animation-name: ex;
+            animation-timing-function: ease-in-out;
+            animation-duration: 1s;
+            display: none;
+            
+        }
+        @keyframes ex {
+            from{opacity: 0.4;}
+            to{opacity: 1;}
+            
+        }
+        .arrow{
+            display:inline-block;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color:black transparent transparent transparent;
+        }
+
+        @media screen and (max-width:350px) {
+            .tooltiprow{
+                flex-direction: column;
+            }
+            .tooltipinput{
+                margin-bottom: 15px;
+            }
+            
+        }
+       
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <div class="search">
+            <input type="text" id="navsearch" placeholder="search here..." class="search" onkeyup="navsearch()">
+        </div>
+        <div class="navmenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+
+        </div>
+        <button class="hamberger" onclick="hamberger()">&#9776;</button>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-25">
+
+            <h2 style="text-align: center;">Projects</h2>
+            <a href="create_messenger.html">Create Messenger</a>
+            <a href="popup_chat_box.html">Pop Up ChatBox</a>
+
+            <a href="index.html">Type Writer ChatGpt</a>
+            <a href="copy_text_input_clipboard.html">Basic Copy Text</a>
+            <a href="tooltip.html" class="active">Using Tolltip</a>
+            <a href="Digital_Clock.html">Digital Clock</a>
+            <a href="count_down_timer.html">CountDown Timer</a>
+            <a href="stopwatch.html">Create StopWatch</a>
+
+            <a href="fb_login_form.html">FB login from</a>
+            <a href="tab.html">Tab Button</a>
+            <a href="accordion.html">Accordion</a>
+            <a href="auto_img_slide_show.html">Auto Image Gallery</a>
+            <a href="dropdown_menu.html" >DropDown Menu</a>
+            <a href="modal_box.html">Modal Box</a>
+            <a href="modal_image_box.html">Modal Image Box</a>
+            <a href="scroll_indicator.html">Scroll Indicator</a> 
+            <a href="To_do_list.html">To Do List</a>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <div class="col-75">
+            <div class="projectname">
+                <h1>©️ Copying a Text & Using Tooltip🔥</h1>
+            </div>
+
+            <div class="beginnerpurpose">
+                <div class="condition">
+                    <span>Note: If you are a beginner, this is something you need to know. Scroll the below section or <a href="#beginner">Click  here</a></span>
+                    <ul>
+                        <li>Postion property & transform property in CSS</li>
+                        <li>you have to know animation property in CSS</li>
+                        <li>HTML Input field</li>
+                        <li>Clipboard API() mehtod in JS</li>
+                        <li>select() method in JS</li>
+                        <li>You need information about JS function and HTML buttons</li> 
+                        <li>setTimeOut() method in JS</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <div class="showcontent">
+                <h3>Write something in the input field and then click the button to copy the text.</h3>
+
+                <div class="tooltiprow">
+                    <div class="tooltipinput">
+                        <input type="text" id="text" placeholder="some text...">
+                    </div>
+                    <div class="tooltipcontent">
+                        <button onclick="tooltip()">copy</button>
+                        <div class="tooltiptext">
+                            <span>Coppied text</span>
+                            <div class="arrow">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  
+
+                <p>After Clicked the button then  paste it into NotePad or anywhere else for testing.</p>  
+            </div>
+
+
+
+            <div class="htmlcode snipet">
+                <h2>HTML</h2>
+                <div class="htmlcontainer">
+                    <button>copy</button>
+                    <div class="html">
+<pre>
+<code>
+&lt;div class="showcontent"&gt;<br>
+&lt;h3&gt;Write something in the input field and then click the button to copy the text.&lt;/h3&gt;<br>
+
+&lt;div class="tooltiprow"&gt;<br>
+    &lt;div class="tooltipinput"&gt;<br>
+        &lt;input type="text" id="text" placeholder="some text..."&gt;<br>
+    &lt;/div&gt;<br>
+    &lt;div class="tooltipcontent"&gt;<br>
+        &lt;button onclick="tooltip()"&gt;copy&lt;/button&gt;<br>
+        &lt;div class="tooltiptext"&gt;<br>
+            &lt;span&gt;Coppied text&lt;/span&gt;<br>
+            &lt;div class="arrow"&gt;<br>
+                
+            &lt;/div&gt;<br>
+        &lt;/div&gt;<br>
+    &lt;/div&gt;<br>
+&lt;/div&gt;<br>
+    
+
+&lt;p&gt;After Clicked the button then  paste it into NotePad or anywhere else for testing.&lt;/p&gt;<br>
+&lt;/div&gt;<br>
+</code>
+</pre>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="jscode snipet">
+                <h2>JavaScript</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+                        <pre>
+<code>
+function tooltip(){
+    let tooltext=document.getElementsByClassName("tooltiptext");
+    //console.log(tooltext);//return collection1
+
+    tooltext[0].style.display="inline-block";
+
+
+
+
+    let input=document.getElementById("text");
+    console.log(input);
+
+    input.select();
+
+    navigator.clipboard.writeText(input.value);
+
+
+
+
+
+    setTimeout(function(){
+        tooltext[0].style.display='none';
+    },1500)
+} 
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="csscode snipet">
+                <h2>CSS</h2>
+                <div class="csscontainer">
+                    <button>copy</button>
+                    <div class="css">
+<pre>
+<code>
+.tooltiprow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tooltiprow input[type=text]{
+    padding: 8px 16px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 8px;
+    font-size: 18px;
+}
+.tooltipcontent{
+    position: relative;
+}
+.tooltipcontent button{
+    padding: 8px 16px;
+    background-color:rgb(0, 255, 85);
+    color:white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.tooltipcontent button:hover{
+    background-color:rgb(0, 255, 123);
+    color:black;
+    
+}
+.tooltiptext{
+    position: absolute;
+    white-space: nowrap;
+    top:-107%;
+    padding: 6px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    
+    animation-name: ex;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    display: none;
+    
+}
+@keyframes ex {
+    from{opacity: 0.4;}
+    to{opacity: 1;}
+    
+}
+.arrow{
+    display:inline-block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color:black transparent transparent transparent;
+}
+
+@media screen and (max-width:350px) {
+    .tooltiprow{
+        flex-direction: column;
+    }
+    .tooltipinput{
+        margin-bottom: 15px;
+    }
+    
+}
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+        
+
+
+
+
+            <div class="beginnersection" id="beginner">
+                <section>
+                    <h2>HTML Input field</h2>
+                    <ul>
+                        <li>Input fields in HTML use to gather data from user such as text, numbers, dates and more.<br>Example: &lt;input type="text"&gt;</li>
+                    </ul>
+                    
+                </section>
+
+                <section>
+                    <h2>navigator.clipboard.writeText(param..)</h2>
+                    <ul>
+                        <li>Purpse: Enables copying text to the clipboard programmatically.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>select() method</h2>
+                    <ul>
+                        <li>Here select method select input element .and the select() method is not available on strings or plain values.<br>
+                        Example: const inputElement = document.getElementById('copy');<br>
+                        inputElement.select()
+                        </li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2>document.execCommand('copy')</h2>
+                    <ul>
+                        <li>This method copies the currently selected text or content within the editable element (like input or textarea) to the clipboard.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>window.getSelection().removeAllRanges</h2>
+                    <ul>
+                        <li>Clear all current selection whithin the document, ensuring no text or content remains selected after this operation.</li>
+                    </ul>
+                </section>
+
+
+
+        </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="index.js">
+    </script>
+
+    <script>
+
+        function tooltip(){
+            let tooltext=document.getElementsByClassName("tooltiptext");
+            //console.log(tooltext);//return collection1
+
+            tooltext[0].style.display="inline-block";
+
+
+
+
+            let input=document.getElementById("text");
+            console.log(input);
+
+            input.select();
+
+            navigator.clipboard.writeText(input.value);
+
+
+
+
+
+            setTimeout(function(){
+                tooltext[0].style.display='none';
+            },1500)
+        }
+
+    </script>
+
+
+</body>
+
+</html>

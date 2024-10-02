@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Indicator Showed</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            padding-bottom: 2000px;
+        }
+        .row{
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .header {
+            background-color: #04aa6a;
+            padding: 3px;
+            color: white;
+            text-align: center;
+        }
+
+        .scrollout {
+            position: relative;
+            width: 100%;
+            background-color: #333;
+            height: 12px;
+        }
+
+        .scrollin {
+            width: 0%;
+            height: 3px;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #demo{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            white-space: nowrap;
+            font-size:17px;
+            transform:translate(-50%,-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="header">
+            <h1>My Header</h1>
+        </div>
+
+        <div class="scrollout">
+            <div class="scrollin">
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <p id="demo">Scroll this page & look at the top of this page <br>Visualize how above red line is worked.</p>
+
+
+
+
+    <script>
+
+        window.onscroll=function(){
+
+
+
+            let windH=window.innerHeight;
+            let windW=window.innerWidth;
+
+
+
+            let cliH=document.documentElement.clientHeight;
+            let cliW=document.documentElement.clientWidth;
+
+
+            let offH=document.documentElement.offsetHeight;
+
+            let sctop=document.documentElement.scrollTop;
+
+
+            let calculatescroll=(sctop*100)/(offH-cliH);
+
+
+            document.querySelector(".scrollin").style.width=calculatescroll+"%";
+
+
+            let cl=`ClientHeight: ${cliH}, ClientWidth: ${cliW}`;
+
+            document.getElementById("demo").innerHTML=`windowHeight: ${windH}, windowWidht: ${windW} <br> ${cl} <br> offsetHeight: ${offH}, ScrollTop: ${sctop}`;
+
+        }
+    </script>
+
+</body>
+</html>

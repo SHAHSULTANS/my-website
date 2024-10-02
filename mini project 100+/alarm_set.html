@@ -1,0 +1,498 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm set</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .showcontent{
+           
+        }
+        .alarm-container{
+            background-color: white;
+            position: relative;
+            min-height: 200px;
+           
+        }
+        .setting-continer{
+            
+            position: absolute;
+            top: 0px;
+            z-index: 10;
+            left: 0px;
+            
+            background-color: black;
+            border-radius: 10px;
+            
+        }
+        .setting-continer div{
+            display: block; 
+            width: 100%;
+            color:white;
+            font-weight: bold;
+            font-size: 25px;
+            cursor: pointer; 
+        }
+       
+       
+
+       
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <div class="search">
+            <input type="text" id="navsearch" placeholder="search here..." class="search" onkeyup="navsearch()">
+        </div>
+        <div class="navmenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+
+        </div>
+        <button class="hamberger" onclick="hamberger()">&#9776;</button>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-25">
+
+            <h2 style="text-align: center;">Projects</h2>
+            <a href="create_messenger.html">Create Messenger</a>
+            <a href="popup_chat_box.html">Pop Up ChatBox</a>
+
+            <a href="index.html">Type Writer ChatGpt</a>
+            <a href="copy_text_input_clipboard.html">Basic Copy Text</a>
+            <a href="tooltip.html">Using Tolltip</a>
+
+            <a href="Digital_Clock.html">Digital Clock</a>
+            <a href="count_down_timer.html">CountDown Timer</a>
+            <a href="stopwatch.html">Create StopWatch</a>
+
+            <a href="fb_login_form.html">FB login from</a>
+            <a href="tab.html">Tab Button</a>
+            <a href="accordion.html">Accordion</a>
+            <a href="auto_img_slide_show.html">Auto Image Gallery</a>
+            <a href="dropdown_menu.html">DropDown Menu</a>
+            <a href="modal_box.html">Modal Box</a>
+            <a href="modal_image_box.html">Modal Image Box</a>
+            <a href="scroll_indicator.html">Scroll Indicator</a>
+            <a href="To_do_list.html">To Do List</a>
+            <a href="Autocomplete.html">Autocomplete</a>
+
+            <a href="google_remember_our_search.html" >Remember Search History</a>
+            <a href="toggle_switch.html" >Toggle Switch</a>
+            <a href="calender_layout.html" >Calender Layout</a>
+
+            <a href="calender_dynamic.html" >Dynamic Calender</a>
+            <a href="alarm_set.html" class="active">Alarm Set</a>
+
+
+
+        </div>
+
+
+        <div class="col-75">
+            <div class="projectname">
+                <h1>🔔Alarm Set⏰</h1>
+            </div>
+
+            <div class="beginnerpurpose">
+                <div class="condition">
+                    <span>Note: If you are a beginner, this is something you need to know. Scroll the below section or <a href="#beginner">Click  here</a></span>
+                    <ul>
+                        <li>pseudo-elements(like ::before, ::after)</li>
+                        <li>you have to know <b>transform</b> property.</li>
+                        
+                        <li>position property in CSS</li>
+                    </ul>
+                </div>
+            </div> 
+
+            <!-- <div class="showcontent">
+                <h3 style="line-height: 1.4;">A time alarm is a function or mechanism that alerts you at specific time or after a set of duration.</h3>
+                
+                <div class="alarm-container">
+                    <div class="setting-continer">
+                        <div>&#x2699;</div>
+
+                    </div>
+                </div>
+                
+
+                
+            </div>
+
+
+            <div class="htmlcode snipet">
+                <h2>HTML</h2>
+                <div class="htmlcontainer">
+                    <button>copy</button>
+                    <div class="html">
+<pre>
+<code>
+&lt;div class="showcontent"&gt;
+
+    &lt;header&gt;
+        &lt;div class="month-year"&gt;
+            &lt;div&gt;AUGUST&lt;/div&gt;
+            &lt;div&gt;2024&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="leftarrow"&gt;&#10094;&lt;/div&gt;
+        &lt;div class="rightarrow"&gt;&#10095;&lt;/div&gt;
+
+    &lt;/header&gt;
+    
+    &lt;div class="weekdays"&gt;
+        &lt;div&gt;Mo&lt;/div&gt;
+        &lt;div&gt;Tu&lt;/div&gt;
+        &lt;div&gt;We&lt;/div&gt;
+        &lt;div&gt;Th&lt;/div&gt;
+        &lt;div&gt;Fr&lt;/div&gt;
+        &lt;div&gt;Sa&lt;/div&gt;
+        &lt;div&gt;Su&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="days"&gt;
+
+    &lt;/div&gt;
+
+    
+&lt;/div&gt;
+</code>
+</pre>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="jscode snipet">
+                <h2>JavaScript</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+                        <pre>
+<code>
+for(let i=1;i<=31;i++){
+    let div=document.createElement("DIV");
+    div.innerText=i;
+    document.getElementsByClassName("days")[0].appendChild(div);
+}
+
+let active = document.querySelectorAll(".days div");
+active[27].classList.add("today");
+
+const content = active[27].innerText;
+
+// Set a custom data attribute (e.g., data-content) to use in CSS
+document.querySelector(".today").setAttribute("data-content", content);
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+  
+
+
+
+
+
+
+
+            <div class="csscode snipet">
+                <h2>CSS</h2>
+                <div class="csscontainer">
+                    <button>copy</button>
+                    <div class="css">
+<pre>
+<code>
+.showcontent header{
+    background-color: dodgerblue;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    color: white;
+    font-size: 20px;
+}
+.month-year{
+    width: inherit;
+    height: inherit;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.leftarrow,.rightarrow{
+    position: absolute;
+    padding: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.rightarrow{
+    right: 0;
+}
+.weekdays{
+    display: flex;
+    background-color: #a39595;
+    color: black;
+    padding: 5px;
+}
+.weekdays div{
+    width: calc(100% / 7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.days{
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.days div{
+    width: calc(100% / 7);
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.days .today::before{
+    content:attr(data-content);
+
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color:#04aa6a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+}
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div> -->
+
+
+            <div id="application">
+                <h1>Application🌐</h1>
+                <article>
+                    <h3>Personal Management</h3>
+                    <p>Scheduling appointments, reminders and events.</p>
+                </article>
+
+                <article>
+                    <h3>Education</h3>
+                    <p>Organizing academic schedules, exams, and schools events.</p>
+                </article>
+                
+                <article>
+                    <h3>Finance</h3>
+                    <p> Tracking budgets, tax deadlines, and investment timing</p>
+                </article>
+
+                <article>
+                    <h3>Government & Religious</h3>
+                    <p>Defining holidays, elections, prayer times and public services.</p>
+                </article>
+                <article>
+                    <h3>Tech/Product Development</h3>
+                    <p> Planning launches, software releases, and development timelines.</p>
+                </article>
+            </div>
+
+
+
+
+            <div class="beginnersection" id="beginner">
+                <section>
+                    <h2>new Date()</h2>
+                    <ul>
+                        <li>Returns a Date object with the current date and time based on the system's clock.</li>
+                        <li>This create a date object represent the current date and time.</li>
+                    </ul>
+                    
+                </section>
+
+                <section>
+                    <h2>toString()</h2>
+                    <ul>
+                        <li>The toString() method converts any data type into a string. Syntax: varname.toString(),</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>padStart()</h2>
+                    <ul>
+                        <li>It is used to JS to pad the current string with another string untill the resulting string reaches the given length.<br>Example: str.padStart(len,char or string);</li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2>setInterval()</h2>
+                    <ul>
+                        <li>This method in JS repeatedly calls a function or executes a code with a fixed time delay between each call.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>setTimeout()</h2>
+                    <ul>
+                        <li>This method is used to execute a function or code snippet after a specified delay in milliseconds.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>date.get....()</h2>
+                    <ul>
+                        <li>getDate(): Returns the day of the month(1-31)</li>
+                        <li>getMonth(): Returns the month(0-11)</li>
+                        <li>getFullYear(): Returns the year(4 digit year)</li>
+                        <li>getDay(): Returns the day of the week(0-6)</li>
+                        <li>getHours(): Returns the hours(0-23)</li>
+                        <li>getMinutes(): Returns the minites(0-59)</li>
+                        <li>getSeconds(): Returns the seconds(0-59)</li>
+                        <li>getMilliseconds(): Returns the milliseconds(0-999)</li>
+                        <li>getTime(): Returns the number of milliseconds since January 1, 1970, 00:00:00 UTC</li>
+                    </ul>
+                </section>
+
+
+
+        </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="index.js">
+    </script>
+
+    <script>
+        const monthYear=document.querySelector(".month-year");
+
+        const nextMonth=document.querySelector(".nextmonth");
+        const prevMonth=document.querySelector(".prevmonth");
+        const days=document.querySelector(".days");
+
+        const currentDate=new Date();
+
+        //console.log(currentDate);
+
+        function renderDates(){
+            days.innerHTML="";
+
+            const month=currentDate.getMonth();
+            const year=currentDate.getFullYear();
+            //console.log(month,year);
+
+            const firstDay=new Date(year,month,1).getDay();
+            const totalDaysOfMonth=new Date(year,month+1,0).getDate();
+
+            const prevDaysOfMonth=new Date(year,month,0).getDate();
+
+            monthYear.innerHTML=currentDate.toLocaleDateString("default",{month:"short"})+" "+year;
+
+            const today=new Date();
+
+            for(let i=1;i<=firstDay;i++){
+                let div=document.createElement("DIV");
+                div.innerText=prevDaysOfMonth-firstDay+i;
+
+                div.classList.add("not-current-month");
+                days.appendChild(div);
+
+            }
+            for(let i=1;i<=totalDaysOfMonth;i++){
+                let div=document.createElement("DIV");
+                div.innerText=i;
+
+                if(i==today.getDate() && today.getMonth()==currentDate.getMonth() && today.getFullYear()==currentDate.getFullYear()){
+                    div.classList.add("today");
+                }
+                
+                days.appendChild(div);
+            }
+
+            const totalDaysAdd=firstDay+totalDaysOfMonth;
+
+            const remain=totalDaysAdd<=35?35-totalDaysAdd:42-totalDaysAdd;
+
+            for(let i=1;i<=remain;i++){
+                let div=document.createElement("DIV");
+                div.innerText=i;
+
+                div.classList.add("not-current-month");
+                days.appendChild(div);
+            }
+
+            //console.log(remain);
+            //console.log(prevDaysOfMonth);
+            //console.log(totalDaysOfMonth);
+           /// console.log(firstDay);
+            
+
+
+        }
+
+
+        nextMonth.addEventListener("click",()=>{
+            currentDate.setMonth(currentDate.getMonth()+1);
+            renderDates();
+        });
+
+        prevMonth.addEventListener("click",()=>{
+            currentDate.setMonth(currentDate.getMonth()-1);
+            renderDates();
+        });
+        renderDates();
+
+       
+        
+        
+
+
+     
+    </script>
+
+
+</body>
+
+</html>

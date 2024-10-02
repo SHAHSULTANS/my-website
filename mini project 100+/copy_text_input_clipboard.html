@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copying text</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        input[type=text]{
+            padding: 8px 12px;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+        button{
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p>Logo</p>
+        </div>
+        <div class="search">
+            <input type="text" id="navsearch" placeholder="search here..." class="search" onkeyup="navsearch()">
+        </div>
+        <div class="navmenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+
+        </div>
+        <button class="hamberger" onclick="hamberger()">&#9776;</button>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+        <div class="col-25">
+
+            <h2 style="text-align: center;">Projects</h2>
+            <a href="create_messenger.html">Create Messenger</a>
+            <a href="popup_chat_box.html">Pop Up ChatBox</a>
+
+            <a href="index.html">Type Writer ChatGpt</a>
+            <a href="copy_text_input_clipboard.html" class="active">Basic Copy Text</a>
+            <a href="tooltip.html">Using Tolltip</a>
+
+            <a href="Digital_Clock.html">Digital Clock</a>
+            <a href="count_down_timer.html">CountDown Timer</a>
+            <a href="stopwatch.html">Create StopWatch</a>
+
+            <a href="fb_login_form.html">FB login from</a>
+            <a href="tab.html">Tab Button</a>
+            <a href="accordion.html">Accordion</a>
+            <a href="auto_img_slide_show.html">Auto Image Gallery</a>
+            <a href="dropdown_menu.html" >DropDown Menu</a>
+            <a href="modal_box.html">Modal Box</a>
+            <a href="modal_image_box.html">Modal Image Box</a>
+            <a href="scroll_indicator.html">Scroll Indicator</a>
+            <a href="To_do_list.html">To Do List</a>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <div class="col-75">
+            <div class="projectname">
+                <h1>Copying a Text From Input Field ©️</h1>
+            </div>
+
+            <div class="beginnerpurpose">
+                <div class="condition">
+                    <span>Note: If you are a beginner, this is something you need to know. Scroll the below section or <a href="#beginner">Click  here</a></span>
+                    <ul>
+                        <li>HTML Input field</li>
+                        <li>Clipboard API() mehtod in JS</li>
+                        <li>document.execCommand('copy')</li>
+                        <li>select() method in JS</li>
+                        <li>You need information about JS function and HTML buttons</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcontent">
+                <h3>Write something in the input field and then click the button to copy the text.</h3>
+                <input type="text" id="copy" placeholder="write something...">
+                <button onclick="copyText()">Copy</button>
+
+                <p>After Clicked the button then  paste it into NotePad or anywhere else for testing.</p>  
+            </div>
+
+
+            <div class="htmlcode snipet">
+                <h2>HTML</h2>
+                <div class="htmlcontainer">
+                    <button>copy</button>
+                    <div class="html">
+<pre>
+<code>
+&ltinput type="text" id="copy" placeholder="write something..."&gt<br>
+&ltbutton onclick="copyText()"&gtCopy&lt/button&gt<br>
+    
+</code>
+</pre>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="jscode snipet">
+                <h2>JavaScript</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+                        <pre>
+<code>
+
+function copyText() {<br>
+let inputvalue = document.getElementById("copy");<br>
+inputvalue.select();
+// select method can only use html element, not available on strings or plain values.<br>
+console.log(inputvalue);<br>
+navigator.clipboard.writeText(inputvalue.value);<br>
+}
+      
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="jscode snipet">
+                <h2>You Can Use Alternative JavaScript document.execCommand('copy') Method.</h2>
+                <div class="jscontainer">
+                    <button>copy</button>
+                    <div class="js">
+<pre>
+<code>
+
+const inputvalue=document.querySelector("#copy");
+inputvalue.select();
+inputvalue.setSelectionRange(0,99999);
+
+try{
+    if(document.execCommand('copy')){
+        alert("Text is copied")
+    }
+    else{
+        alert("Failed to copy");
+    }
+}
+catch(err){
+    console.log("Failed "+err);
+
+}
+
+window.getSelection().removeAllRanges();
+   
+
+</code>
+</pre>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="beginnersection" id="beginner">
+                <section>
+                    <h2>HTML Input field</h2>
+                    <ul>
+                        <li>Input fields in HTML use to gather data from user such as text, numbers, dates and more.<br>Example: &lt;input type="text"&gt;</li>
+                    </ul>
+                    
+                </section>
+
+                <section>
+                    <h2>navigator.clipboard.writeText(param..)</h2>
+                    <ul>
+                        <li>Purpse: Enables copying text to the clipboard programmatically.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>select() method</h2>
+                    <ul>
+                        <li>Here select method select input element .and the select() method is not available on strings or plain values.<br>
+                        Example: const inputElement = document.getElementById('copy');<br>
+                        inputElement.select()
+                        </li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2>document.execCommand('copy')</h2>
+                    <ul>
+                        <li>This method copies the currently selected text or content within the editable element (like input or textarea) to the clipboard.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>window.getSelection().removeAllRanges</h2>
+                    <ul>
+                        <li>Clear all current selection whithin the document, ensuring no text or content remains selected after this operation.</li>
+                    </ul>
+                </section>
+
+
+
+        </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="index.js">
+    </script>
+
+    <script>
+
+        function copyText(){
+            let inputvalue=document.getElementById("copy");
+            inputvalue.select();//select method can only use html element. not available on strings or plains values.
+            console.log(inputvalue);
+            navigator.clipboard.writeText(inputvalue.value);
+        }
+
+    </script>
+
+
+</body>
+
+</html>
